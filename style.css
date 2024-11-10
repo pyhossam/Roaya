@@ -1,0 +1,253 @@
+/* Global Styles */
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    max-width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    max-height: 100px; /* Corrected to lowercase px */
+    background: #04122d;
+    color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+header .logo {
+    width: 100px;
+    perspective: 500px;
+    margin: 10px;
+}
+
+header .logo img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 20px 30px rgba(155, 103, 19, 0.3);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+header .logo:hover img {
+    transform: rotateY(20deg) rotateX(10deg) translateZ(20px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Content Styles */
+.content {
+    margin-top: 110px; /* Space for the fixed header */
+    padding: 20px;
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    color: #fff;
+    padding: 0;
+    display: flex; /* Use flex for horizontal layout */
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none; /* Added for better UX */
+}
+
+/* Top Image Section */
+.topimg {
+    position: relative;
+    overflow: hidden;
+    width: 90%;
+    height: 300px;
+    background-color: #f0425c;
+}
+
+.topimg img {
+    display: block;
+    width: 100%; /* Ensures responsiveness */
+    height: auto; /* Maintains aspect ratio */
+}
+
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.topimg:hover .caption {
+    transform: translateY(0);
+}
+
+/* CTA Button Styles */
+.cta-button {
+    background: #573504;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Calendar Styles */
+.calendar {
+    background-color: #03263b;
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* Center items horizontally */
+    flex-wrap: nowrap;
+    /* Prevent wrapping */
+}
+
+.calendar div {
+    padding: 4px;
+}
+
+.day-name,
+.date {
+    flex: 1;
+    /* Allow flexibility of items */
+    text-align: center;
+    /* Center text */
+}
+.calendar-icon {
+    font-size: 2rem;
+    /* Adjust icon size */
+}
+.calendar i{
+    text-align: center;
+}
+
+/* Services Section */
+.services, .additional-services {
+    display: flex;
+    flex-wrap: nowrap; /* Allows wrapping of items */
+    justify-content: space-around;
+    padding: 40px 20px;
+    background: #f9f9f9;
+}
+
+
+.service-box {
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease; /* Smooth hover effect */
+}
+
+.service-box:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-box img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+/* Header for Services */
+.serive-hdr {
+    position: relative;
+}
+
+.serive-hdr h3 {
+    width: 100%;
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centering */
+}
+
+/* CTA Section */
+.cta-section {
+    text-align: center;
+    padding: 10px;
+}
+
+.cta-button-whatsapp {
+    background: #03263b;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+/* Footer Styles */
+footer {
+    width: 100%;
+    background: #04122d;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0 !important;
+}
+
+footer .social-links a {
+    margin: 0 10px;
+    color: #ffffff;
+}
+
+footer .social-links img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Carousel Styles */
+.carousel-item {
+    height: 150px; /* Use relative height */
+}
+
+.carousel-item img {
+    object-fit: cover; /* Cover to maintain aspect ratio */
+    width: 100%; /* Ensures image full width */
+    height: auto; /* Maintains aspect ratio */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .services, .additional-services {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: center; /* Center align items */
+    }
+
+    header {
+        flex-direction: column; /* Stack logo and nav vertically */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack navigation items */
+    }
+
+    .calendar {
+        flex-direction: column; /* Stack calendar items */
+    }
+
+    .service-box {
+        width: 90%; /* Full width on small screens */
+        margin-bottom: 20px; /* Space between boxes */
+    }
+}
